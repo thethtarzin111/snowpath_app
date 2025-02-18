@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/main_pagebtn"
+        android:icon="@drawable/home_page"
+        android:title="Home"/>
+    <item android:id="@+id/route_pagebtn"
+        android:icon="@drawable/route_page"
+        android:title="Routes" />
+    <item android:id="@+id/sloperun_pagebtn"
+        android:icon="@drawable/sloperun_page"
+        android:title="Slope Run"/>
+    <item android:id="@+id/settings_pagebtn"
+        android:icon="@drawable/settings_page"
+        android:title="Settings" />
+</menu>
