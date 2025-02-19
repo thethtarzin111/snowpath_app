@@ -1,14 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<!--
+    File: settings.xml
+    Description: This layout defines the settings screen UI for the application.
+    It consists of multiple TextViews for settings labels and corresponding SwitchCompat
+    toggles for user preferences (e.g., Show Course, Show Speed, Dark Mode, etc.).
+    It also has two buttons to connect glasses and to calibrate the sensors.
+
+    Author: Thet Htar Zin
+    Created On: 19.2.2025
+    Last Updated: 19.2.2025
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Settings Title -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings Page" />
+        android:id="@+id/settingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Settings"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/button_normal_color"/>
 
-</FrameLayout>
+    <!-- Glasses Connect Button below Settings -->
+    <Button
+        android:id="@+id/connectGlassesBtn"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settingsTitle"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/button_normal_color"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Connect Glasses" />
+    <!--style="@style/Widget.Material3.Button.TextButton"-->
+    <!-- Sensor Button below Connect Glasses -->
+    <Button
+        android:id="@+id/sensorBtn"
+
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/connectGlassesBtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/button_normal_color"
+        android:fontFamily="@font/roboto_serif_semibold"
+
+        android:text="Calibrate sensor" />
+
+    <!-- Show Course SwitchCompat below Sensor Button -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/showCourseSwitch"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sensorBtn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Show Course"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp"
+        android:checked="true"/>
+
+    <!-- Show Speed SwitchCompat below Show Course -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/showSpeedSwitch"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showCourseSwitch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Show Speed"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp"
+        android:checked="true"/>
+
+    <!-- Show Proximity SwitchCompat below Show Speed -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/showProxSwitch"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showSpeedSwitch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Show Proximity"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp"
+        android:checked="true"/>
+
+    <!-- Show Altitude SwitchCompat below Show Proximity -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/showAltiSwitch"
+        android:layout_width="349dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showProxSwitch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Show Altitude"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp"
+        android:checked="true"/>
+
+    <!-- Auto Brightness SwitchCompat below Show Altitude -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/showBrightSwitch"
+        android:layout_width="343dp"
+        android:layout_height="33dp"
+        android:layout_below="@id/showAltiSwitch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Auto Brightness"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp"
+        android:checked="true"/>
+
+    <!-- Dark Mode SwitchCompat below Auto Brightness -->
+
+    <!-- This is to display version of the app -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/darkModeSwitch"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showBrightSwitch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Dark Mode"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/versionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/darkModeSwitch"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_serif_semibold"
+        android:text="Version 1.0"
+        android:textColor="@color/button_normal_color"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>

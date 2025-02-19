@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +35,25 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        val view =  inflater.inflate(R.layout.fragment_settings, container, false)
+
+        // Find the connect glasses button by ID
+        val connectGlassesBtn: Button = view.findViewById(R.id.connectGlassesBtn)
+
+        // Set an OnClickListener to perform actions on button click
+        connectGlassesBtn.setOnClickListener {
+            //Function: Another page or fragment will be viewed when clicked.
+            //This where settings for connecting glasses with bluetooth will be shown.
+        }
+
+        // Find the sensor button by ID
+        val sensorBtn: Button = view.findViewById(R.id.sensorBtn)
+        sensorBtn.setOnClickListener {
+            //Function: Another page or fragment will be viewed when clicked.
+            //This where settings for calibrating sensors will be shown.
+        }
+        return view
+
     }
 
     companion object {
